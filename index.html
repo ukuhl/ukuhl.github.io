@@ -76,33 +76,17 @@
         }
 
         function showPublications() {
-        // Clear existing content
-        document.getElementById("content").innerHTML = "";
+            // Clear existing content
+            document.getElementById("content").innerHTML = "";
 
-        // Create a div element to hold the publication list
-        const publicationsDiv = document.createElement("div");
-        publicationsDiv.className = "publ";
-
-        // Create the script element to embed the publication list
-        const scriptElement = document.createElement("script");
-        scriptElement.type = "text/javascript";
-        scriptElement.charset = "UTF-8";
-        scriptElement.src = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=de&fmt=js";
-
-        // Create a noscript element as a fallback link
-        const noscriptElement = document.createElement("noscript");
-        const linkElement = document.createElement("a");
-        linkElement.href = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=de";
-        linkElement.target = "_blank";
-        linkElement.textContent = "Publications";
-
-        // Append elements to the publicationsDiv
-        noscriptElement.appendChild(linkElement);
-        publicationsDiv.appendChild(scriptElement);
-        publicationsDiv.appendChild(noscriptElement);
-
-        // Append the publicationsDiv to the content section
-        document.getElementById("content").appendChild(publicationsDiv);
+            // Create an iframe element to embed the publication list
+            const iframeElement = document.createElement("iframe");
+            iframeElement.src = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=de";
+            iframeElement.width = "100%";
+            iframeElement.height = "500"; // Adjust the height as needed
+    
+            // Append the iframeElement to the content section
+            document.getElementById("content").appendChild(iframeElement);
         }
 
         function showCV() {
