@@ -37,7 +37,7 @@
             text-decoration: none;
             color: white;
             padding: 10px;
-            display: block;
+            display: inline-block;
         }
         #menu hr {
             border: 1px solid white;
@@ -52,13 +52,14 @@
     <div id="header">
         <div id="left-side">
             <img id="profile-image" src="ProfilePicUlrike_HP.jpg" alt="Your Profile Image">
-            <h1 id="name">Your Name</h1>
+            <h1 id="name">Dr. Ulrike Kuhl</h1>
             <div id="keywords">
-                <p>Keyword 1, Keyword 2, Keyword 3</p>
+                <p>eXplainable AI · Human-Computer Interaction · Interdisciplinary Collaboration</p>
             </div>
         </div>
         <div id="menu">
             <a class="menu-button" href="#" onclick="showHome()">Home</a>
+            <a class="menu-button" href="#" onclick="showPublications()">Home</a>
             <a class="menu-button" href="#" onclick="showCV()">CV</a>
             <a class="menu-button" href="#" onclick="showResources()">Resources</a>
             <a class="menu-button" href="#" onclick="showContact()">Contact</a>
@@ -72,6 +73,10 @@
     <script>
         function showHome() {
             document.getElementById("content").innerHTML = "<p>Welcome to the page.</p>";
+        }
+
+        function showPublications() {
+            document.getElementById("content").innerHTML = "<p>List of publications.</p>";
         }
 
         function showCV() {
