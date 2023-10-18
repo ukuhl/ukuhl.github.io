@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Research</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@200&display=swap">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Ysabeau', sans-serif;
+            margin: 0;
+        }
+        #header {
+            display: flex;
+        }
+        #left-side {
+            width: 33%;
+            padding: 20px;
+            border-right: 1px solid white;
+        }
+        #profile-image {
+            width: 100%;
+        }
+        #name {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        #keywords {
+            margin-top: 10px;
+        }
+        #menu {
+            width: 66%;
+            padding: 20px;
+        }
+        .menu-button {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: block;
+        }
+        #menu hr {
+            border: 1px solid white;
+            margin: 10px 0;
+        }
+        #content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="left-side">
+            <img id="profile-image" src="ProfilePicUlrike_HP.jpg" alt="Your Profile Image">
+            <h1 id="name">Your Name</h1>
+            <div id="keywords">
+                <p>Keyword 1</p>
+                <p>Keyword 2</p>
+                <p>Keyword 3</p>
+            </div>
+        </div>
+        <div id="menu">
+            <a class="menu-button" href="#" onclick="showHome()">Home</a>
+            <a class="menu-button" href="#" onclick="showCV()">CV</a>
+            <a class="menu-button" href="#" onclick="showResources()">Resources</a>
+            <a class="menu-button" href="#" onclick="showContact()">Contact</a>
+            <hr>
+            <div id="content">
+                <!-- Content for the current menu item goes here -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showHome() {
+            document.getElementById("content").innerHTML = "<p>Welcome to the page.</p>";
+        }
+
+        function showCV() {
+            document.getElementById("content").innerHTML = '<a href="your-cv.pdf" target="_blank">View CV (PDF)</a>';
+        }
+
+        function showResources() {
+            document.getElementById("content").innerHTML = "<ul><li>Resource 1</li><li>Resource 2</li><li>Resource 3</li></ul>";
+        }
+
+        function showContact() {
+            document.getElementById("content").innerHTML = "<p>Contact Address:<br>Your Address Here</p>";
+        }
+
+        // Initially, display the Home content
+        showHome();
+    </script>
+</body>
+</html>
