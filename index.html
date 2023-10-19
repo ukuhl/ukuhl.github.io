@@ -77,13 +77,15 @@
 
         function showPublications() {
             // Clear existing content
-            document.getElementById("content").innerHTML = "PLACEHOLDER";
+            document.getElementById("content").innerHTML = "<p>PLACEHOLDER</p> <p>PLACEHOLDER</p> <p>PLACEHOLDER</p>";
 
-            // Create an iframe to embed the publications
-            const iframe = document.createElement("iframe");
-            iframe.id = "publications-iframe";
-            iframe.src = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=de&fmt=html"; // Change fmt to html
-            document.getElementById("content").appendChild(iframe);
+            // Include the provided JavaScript snippet to embed publications
+            const publicationsScript = document.createElement("script");
+            publicationsScript.type = "text/javascript";
+            publicationsScript.charset = "UTF-8";
+            publicationsScript.src = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=de&fmt=js";
+
+            document.getElementById("content").appendChild(publicationsScript);
         }
 
         function showCV() {
