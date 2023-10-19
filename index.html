@@ -46,6 +46,10 @@
         #content {
             padding: 20px;
         }
+        #publications-content {
+            display: none; /* Initially hidden */
+            /* Your custom styles for the publications content here */
+        }
     </style>
 </head>
 <body>
@@ -67,49 +71,48 @@
             <div id="content">
                 <!-- Content for the current menu item goes here -->
             </div>
-        </div>
-        
-        <div class="publ">
-            <script type="text/javascript" charset="UTF-8" src="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de&amp;fmt=js"></script>
-            <noscript>
-                <a href="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de" target="_blank">Meine Publikationsliste</a>
-            </noscript>
-        </div>
-        
+        </div>        
+    </div>
+    
+    <div id="publications-content">
+        <script type="text/javascript" charset="UTF-8" src="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de&amp;fmt=js"></script>
+        <noscript>
+            <a href="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de" target="_blank">Meine Publikationsliste</a>
+        </noscript>
     </div>
     
     <script>
         function showHome() {
+            hidePublications();
             document.getElementById("content").innerHTML = "<p>Welcome to the page.</p>";
         }
-
-        function showPublications() {
-            // Clear existing content
-            document.getElementById("content").innerHTML = "<p>PLACEHOLDER</p> <p>PLACEHOLDER</p> <p>PLACEHOLDER</p>";
-
-            // Include the provided JavaScript snippet to embed publications
-            const publicationsScript = document.createElement("script");
-            publicationsScript.type = "text/javascript";
-            publicationsScript.charset = "UTF-8";
-            publicationsScript.id = "publications-script";
-            publicationsScript.src = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=eng&fmt=js";
-            console.log(publicationsScript.type);
-            console.log(publicationsScript.charset);
-            console.log(publicationsScript.src);
-
-            document.getElementById("content").appendChild(publicationsScript);
-        }
-
+        
         function showCV() {
+            hidePublications();
             document.getElementById("content").innerHTML = '<a href="your-cv.pdf" target="_blank">View CV (PDF)</a>';
         }
 
         function showResources() {
+            hidePublications();
             document.getElementById("content").innerHTML = "<ul><li>Resource 1</li><li>Resource 2</li><li>Resource 3</li></ul>";
         }
 
         function showContact() {
+            hidePublications();
             document.getElementById("content").innerHTML = "<p>Contact Address:<br>Your Address Here</p>";
+        }
+
+        function showPublications() {
+            // Show the "Publications" content
+            document.getElementById("publications-content").style.display = "block";
+
+            // Hide other content
+            document.getElementById("content").innerHTML = "";
+        }
+
+        function hidePublications() {
+            // Hide the "Publications" content
+            document.getElementById("publications-content").style.display = "none";
         }
 
         // Initially, display the Home content
