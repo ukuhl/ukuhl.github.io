@@ -66,7 +66,6 @@
             <hr>
             <div id="content">
                 <!-- Content for the current menu item goes here -->
-                <div class="publ"><script type="text/javascript" charset="UTF-8" src="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de&amp;fmt=js"></script><noscript><a href="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de" target="_blank">Meine Publikationsliste</a></noscript></div>
             </div>
         </div>
     </div>
@@ -77,16 +76,12 @@
         }
 
         function showPublications() {
-            // Clear existing content
-            document.getElementById("content").innerHTML = "";
-
-            // Include the provided JavaScript snippet to embed publications
-            const publicationsScript = document.createElement("script");
-            publicationsScript.type = "text/javascript";
-            publicationsScript.charset = "UTF-8";
-            publicationsScript.src = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=de&fmt=js";
-
-            document.getElementById("content").appendChild(publicationsScript);
+            document.write ('<ul>');
+            document.write('<li>');
+            document.write('<a href="https://pub.uni-bielefeld.de/record/2969734">Let\'s go to the Alien Zoo: Introducing an experimental framework to study usability of counterfactual explanations for machine learning</a><br />');
+            document.write('Kuhl U, Artelt A, Hammer B (2023) <br /><em>Frontiers in Computer Science</em> 5: 1087929.<br /><!-- BEGIN links.tt --> <a href="https://pub.uni-bielefeld.de/record/2969734" title="" target="_blank"></a>     | <a href="https://pub.uni-bielefeld.de/download/2969734/2969735/fcomp-05-1087929.pdf" title="">PDF</a> | <a href="https://doi.org/10.3389/fcomp.2023.1087929" target="_blank" title="" ></a> | <a href="https://www.frontiersin.org/articles/10.3389/fcomp.2023.1087929/full?&utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field=&journalName=Frontiers_in_Computer_Science&id=1087929" target="_blank" title=""></a> | <a href="http://ws.isiknowledge.com/cps/openurl/service?url_ver=Z39.88-2004&amp;rft_id=info:ut/000963819600001" target="_blank" title=""></a> | <a href="http://arxiv.org/abs/2205.03398" target="_blank" title=""></a>   <!-- END links.tt --> ');
+            document.write('</li>');
+            document.write ('</ul>');
         }
 
         function showCV() {
