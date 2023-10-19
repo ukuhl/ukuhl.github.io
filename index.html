@@ -59,7 +59,7 @@
         </div>
         <div id="menu">
             <a class="menu-button" href="#" onclick="showHome()">Home</a>
-            <a class="menu-button" href="#" onclick="loadAndDisplayPublications('https://pub.uni-bielefeld.de/export?cql=person%3D173944650&fmt=json&lang=eng&limit=1000')">Publications</a>
+            <a class="menu-button" href="#" onclick="showPublications()">Publications</a>
             <a class="menu-button" href="#" onclick="showCV()">CV</a>
             <a class="menu-button" href="#" onclick="showResources()">Resources</a>
             <a class="menu-button" href="#" onclick="showContact()">Contact</a>
@@ -75,31 +75,17 @@
             document.getElementById("content").innerHTML = "<p>Welcome to the page.</p>";
         }
 
-        function loadAndDisplayPublications(jsonUrl) {
+        function showPublications() {
             // Clear existing content
             document.getElementById("content").innerHTML = "";
 
-            // Load the JSON data
-            fetch(jsonUrl)
-                .then(response => response.json())
-                .then(data => {
-                // Render the data
-                const contentDiv = document.getElementById("content");
-                const ul = document.createElement("ul");
+            // Include the provided JavaScript snippet to embed publications
+            const publicationsScript = document.createElement("script");
+            publicationsScript.type = "text/javascript";
+            publicationsScript.charset = "UTF-8";
+            publicationsScript.src = "https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&lang=de&fmt=js";
 
-                // Assuming the JSON structure contains an array of publications
-                data.publications.forEach(publication => {
-                    const li = document.createElement("li");
-                    li.innerHTML = `<strong>${publication.title}</strong>, ${publication.author}, ${publication.year}`;
-                    ul.appendChild(li);
-                });
-
-                // Append the list to the content section
-                contentDiv.appendChild(ul);
-            })
-            .catch(error => {
-                console.error('Error loading JSON data:', error);
-            });
+            document.getElementById("content").appendChild(publicationsScript);
         }
 
         function showCV() {
