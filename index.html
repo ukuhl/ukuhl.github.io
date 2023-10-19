@@ -39,6 +39,12 @@
             padding: 10px;
             display: inline-block;
         }
+        .menu-button:hover {
+            color: lightblue; /* Change link color on hover */
+        }
+        .menu-button:visited {
+            color: purple; /* Set the color of visited links */
+        }
         #menu hr {
             border: 1px solid white;
             margin: 10px 0;
@@ -49,6 +55,14 @@
         #publications-content {
             display: none; /* Initially hidden */
             /* Your custom styles for the publications content here */
+        }
+            /* Set the color for all anchor (link) elements */
+        a {
+            text-decoration: none;
+            color: lightblue; /* Set link color */
+        }
+        a:visited {
+            color: purple; /* Set the color of visited links within the content */
         }
     </style>
 </head>
@@ -71,16 +85,15 @@
             <div id="content">
                 <!-- Content for the current menu item goes here -->
             </div>
+            <div id="publications-content">
+                <script type="text/javascript" charset="UTF-8" src="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de&amp;fmt=js"></script>
+                <noscript>
+                    <a href="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de" target="_blank">Meine Publikationsliste</a>
+                </noscript>
+            </div>
         </div>        
     </div>
-    
-    <div id="publications-content">
-        <script type="text/javascript" charset="UTF-8" src="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de&amp;fmt=js"></script>
-        <noscript>
-            <a href="https://pub.uni-bielefeld.de/embed?cql=person%3D173944650&amp;lang=de" target="_blank">Meine Publikationsliste</a>
-        </noscript>
-    </div>
-    
+        
     <script>
         function showHome() {
             hidePublications();
