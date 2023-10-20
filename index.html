@@ -14,7 +14,7 @@
         }
         #header {
             display: flex;
-            margin-top: 40px; /* Add margin at the top */
+            margin-top: 50px; /* Add margin at the top */
         }
         #left-side {
             width: 20%;
@@ -39,7 +39,7 @@
         .menu-button {
             text-decoration: none;
             color: white;
-            padding: 10px;
+            padding: 20px;
             display: inline-block;
             font-size: 20px; /* Increase the font size for menu buttons */
         }
@@ -48,6 +48,10 @@
         }
         .menu-button:visited {
             color: white; /* Change link color on hover */
+        }
+        .menu-separator {
+        color: white; /* Color of the separator */
+        margin: 0 10px; /* Adjust the margin for spacing */
         }
         #menu hr {
             border: 1px solid white;
@@ -83,9 +87,13 @@
         </div>
         <div id="menu">
             <a class="menu-button" href="#" onclick="showHome()">Home</a>
+            <span class="menu-separator">·</span> <!-- Add the · symbol here -->
             <a class="menu-button" href="#" onclick="showPublications()">Publications</a>
+            <span class="menu-separator">·</span> <!-- Add the · symbol here -->
             <a class="menu-button" href="#" onclick="showCV()">CV</a>
+            <span class="menu-separator">·</span> <!-- Add the · symbol here -->
             <a class="menu-button" href="#" onclick="showResources()">Resources</a>
+            <span class="menu-separator">·</span> <!-- Add the · symbol here -->
             <a class="menu-button" href="#" onclick="showContact()">Contact</a>
             <hr>
             <div id="content">
@@ -109,8 +117,8 @@
             let DNurl = 'https://dataninja.nrw';
             
             document.getElementById("content").innerHTML = "<p>As a postodoctoral researcher, I seek to provide empirical evidence to inform the design, development, and deployment of xAI systems that effectively meet user needs and enhance user trust." +
-                                                            "Specifically, I focus on the usability of counterfactual explanations, simplified 'what-if' scenarios that explore how changes to input variables trigger different model outcomes.</p>" +
-                                                            "In this way, I aspire to contribute to a more comprehensive understanding of the human factors involved in explainable AI, ultimately fostering the development of more user-centered and actionable explanations in AI systems.</p>" +
+                                                            " Specifically, I focus on the usability of counterfactual explanations, simplified 'what-if' scenarios that explore how changes to input variables trigger different model outcomes.</p>" +
+                                                            " In this way, I aspire to contribute to a more comprehensive understanding of the human factors involved in explainable AI, ultimately fostering the development of more user-centered and actionable explanations in AI systems.</p>" +
                                                             "<p>I am affiliated with the <a href=MLurl>Machine Learning group</a> at Bielefeld University, led by <a href=BHurl>Barbara Hammer</a>, and the <a href=CorLaburl>CoR-Lab Research Institute for Cognition and Robotics</a>.</p>" +
                                                             "<p>In conjunction with my research work, I serve as the scientific coordinator of the <a href=DNurl>Data-NInJA research training group</a>, supporting young AI researchers to build trustworthy AI for seamless problem solving.</p>;"            
         }
